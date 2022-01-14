@@ -140,7 +140,8 @@ table {
   --font1: 'Big Shoulders Display', cursive;
   --font2: 'Lexend Deca', sans-serif;
   --heading: 28px;
-  --rounded: 10px;
+  --rounded: 50px;
+  --borderRadius: 10px;
 }
 
 html,
@@ -160,4 +161,119 @@ body {
 }
 
 main {
+  width: 330px;
+  height: 1330px;
+}
+
+main ul li {
+  padding: 45px;
+  font-family: var(--font2);
+  text-align: left;
+  color: var(--paragraphs);
+  font-size: var(--fontSize);
+  font-weight: var(--normal);
+}
+
+main ul li:nth-child(1) {
+  background-color: var(--brightOrange);
+  border-top-left-radius: var(--borderRadius);
+  border-top-right-radius: var(--borderRadius);
+}
+
+main ul li:nth-child(2) {
+  background-color: var(--darkCyan);
+}
+
+main ul li:nth-child(3) {
+  background-color: var(--veryDarkCyan);
+  border-bottom-right-radius: var(--borderRadius);
+  border-bottom-left-radius: var(--borderRadius);
+}
+
+main ul li:nth-child(1) button {
+  color: var(--brightOrange);
+}
+
+main ul li:nth-child(2) button {
+  color: var(--darkCyan);
+}
+
+main ul li:nth-child(3) button {
+  color: var(--veryDarkCyan);
+}
+
+.card {
+  display: grid;
+  place-items: left;
+}
+
+.card h1 {
+  text-transform: uppercase;
+  color: var(--veryLightGray);
+  font-family: var(--font1);
+  font-size: var(--heading);
+  font-weight: var(--bold);
+  margin: 40px 0;
+}
+
+.card p {
+  width: 230px;
+}
+
+.card button {
+  height: 50px;
+  width: 150px;
+  margin-top: 30px;
+  background-color: var(--veryLightGray);
+  border-radius: var(--rounded);
+  outline: none;
+  font-weight: var(--bold);
+  box-sizing: border-box;
+  border: 1px solid var(--veryLightGray);
+  cursor: pointer;
+  display: inline-block;
+  transition: 5ms ease;
+}
+
+.card button:hover {
+  background-color: transparent;
+  border: 1px solid var(--veryLightGray);
+  color: var(--veryLightGray);
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    width: 920px;
+    height: 500px;
+  }
+
+  main ul {
+    display: flex;
+  }
+
+  main ul li:nth-child(1) {
+    border-top-left-radius: var(--borderRadius);
+    border-bottom-left-radius: var(--borderRadius);
+    border-top-right-radius: 0;
+  }
+
+  main ul li:nth-child(3) {
+    border-top-right-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+    border-bottom-left-radius: 0;
+  }
+
+  .card h1 {
+    font-size: 40px;
+    margin: 45px 0 40px 0;
+  }
+
+  .card p {
+    width: 210px;
+  }
+
+  .card button {
+    height: 45px;
+    margin-top: 90px;
+  }
 }
